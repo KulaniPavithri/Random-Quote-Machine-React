@@ -1,0 +1,123 @@
+@import url('https://fonts.googleapis.com/css?family=Raleway:400,500');
+* {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    vertical-align: baseline;
+}
+
+div {
+    position: relative;
+    /*The z-index property specifies the stack order of an element - 
+    which element should come top of the other-
+    https://www.w3schools.com/cssref/tryit.asp?filename=trycss_zindex
+    only works on positioned elements*/
+    z-index: 2;
+}
+
+
+/*background-color style of the body{} is not being applied to <body> tag in react compoment.
+Therefore, separate dev element is added with class .body{} which worked fine. It is because
+an external css file (e.g. bootstrap) is overriding this. 
+After overriding the style from Bootstrap by adding !important to background-color, it worked.
+https://stackoverflow.com/questions/26813335/body-background-color-not-showing/39168809
+https://stackoverflow.com/questions/36525033/background-color-not-working-with-body
+
+Beware, <body> is not as tall as browser. It's only as tall as content inside it just like any other element.
+background-color floods the background is just a strange anomaly of CSS. 
+https://css-tricks.com/just-one-of-those-weird-things-about-css-background-on-body/*/
+body {
+    font-family:  'Raleway', sans-serif;
+    font-weight: 400;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    height: 100vh;
+    background-color: #333 !important;
+    color: #333;
+}
+
+
+
+a {
+    font-weight: 500;
+    text-decoration: none;
+    color: #fff;
+}
+
+#quote-box{
+    position: relative;
+    width: 450px;
+    display: table;
+    padding: 40px 50px;
+    border-radius: 3px;
+    background-color: #fff;
+}
+
+i {
+    font-size: 1em;
+    margin-right: 0.4em;
+}
+
+.quote-text {
+    
+    text-align: center;
+    width: 450px;
+    height: auto;
+    clear: both;
+    font-weight: 500;
+    font-size: 1.75em;
+    
+}
+
+.quote-author {
+    width: 450px;
+    height: auto;
+    clear: both;
+    padding-top: 20px;
+    font-size: 1em;
+    text-align: right;
+}
+
+.buttons {
+    
+    width: 450px;
+    margin: auto;
+    display: block;
+    
+}
+
+.button {
+    height: 40px;
+    border: none;
+    border-radius: 3px;
+    color: #fff;
+    background-color: #333;
+    outline: none;
+    font-size: 0.85em;
+    padding: 8px 18px 8px 18px;
+    margin-top: 30px;
+    opacity: 1;
+    cursor: pointer;
+   
+}
+
+.button:hover {
+    opacity: 0.9;
+    color: #fff;
+}
+
+#tweet-quote{
+    float: left;
+    padding: 6px 0px 6px 7px;
+    text-align: center;
+    font-size: 1.2em;
+    margin-right: 5px;
+    height: 40px;
+    width: 40px;
+}
+
+#new-quote {
+float: right;
+}
